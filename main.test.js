@@ -9,10 +9,13 @@ const addAll = function (numbers){
   return sum;
 }
 
+
 const countSpace = function (str){
   let sum = (str.length - str.trim().length);
   return sum;
 }
+
+
 
 
 
