@@ -12,8 +12,8 @@ const addAll = function (numbers){
 
 const countSpaces = function(str){
 let count = 0
-for(let i in str){
-  if(str[i] === ' '){
+for(let i of str){
+  if(i === ' '){
       count++
     }
   }
@@ -22,8 +22,8 @@ for(let i in str){
 
 const countTrues = function(bool){
 let count = 0
-for(let i in bool){
-  if(bool[i] === true){
+for(let i of bool){
+  if(i === true){
     count++
   }
 }
@@ -52,7 +52,7 @@ const results = []
 
 const addNoises = function(arr1){
 
-  
+
 }
 
 
@@ -85,6 +85,14 @@ if (typeof cubeAll === 'undefined') {
 
 if (typeof addNoises === 'undefined') {
   addNoises = undefined;
+}
+
+if (typeof womenOnly === 'undefined') {
+  womenOnly = undefined;
+}
+
+if (typeof integersOnly === 'undefined') {
+  integersOnly = undefined;
 }
 
 
@@ -263,3 +271,57 @@ describe('addNoises', () => {
     expect(() => addNoises = 500).toThrow();
   })
 })
+
+
+    describe('womenOnly', () => {
+  it('should return an empty array if the input is  an empty array', () => {
+    const input = [];
+    const result = womenOnly(input);
+    expect(result).toEqual([]);
+  });
+
+  it('should return an empty array if there are no female names', () => {
+    const input = ['John', 'Robert', 'Michael'];
+    const result = womenOnly(input);
+    expect(result).toEqual([]);
+  });
+
+  it('should return an array with female names only', () => {
+    const input = ['Alice F', 'Bob M', 'Charlie F', 'David M', 'Eve F'];
+    const result = womenOnly(input);
+    expect(result).toEqual(['Alice F', 'Charlie F', 'Eve F']);
+  });
+});
+
+describe('integersOnly', () => {
+  it('should return an empty array if the input is an empty array', () => {
+    const input = [];
+    const result = integersOnly(input);
+    expect(result).toEqual([]);
+  });
+
+  it('should return an empty array if there are no integers in the input', () => {
+    const input = [1.5, 2.25, 3.75];
+    const result = integersOnly(input);
+    expect(result).toEqual([]);
+  });
+
+  it('should return an array with only integers', () => {
+    const input = [1, 2, 3.0, 4.5, 5, 6.0];
+    const result = integersOnly(input);
+    expect(result).toEqual([1, 2, 3.0, 5, 6.0]); // 3.0 and 6.0 are considered integers
+  });
+
+  it('should handle negative integers', () => {
+    const input = [-1, -2, 3, -4.0, 5.5];
+    const result = integersOnly(input);
+    expect(result).toEqual([-1, -2, 3, -4.0]); // -4.0 is considered an integer
+  });
+
+  it('should handle a mix of integers and non-integers', () => {
+    const input = [2.75, 4, -3.8, 6, 9.0, 11];
+    const result = integersOnly(input);
+    expect(result).toEqual([4, 6, 9.0, 11]); // 9.0 is considered an integer
+  });
+});
+
