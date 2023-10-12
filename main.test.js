@@ -31,17 +31,22 @@ for(let i in bool){
 }
 
 const makeFriendly = function(paragraph){
-  let count = 0
-  for(let i in paragraph){
-    if(paragraph[i] === '.'){
-      paragraph.splice(i, 1, '!');    
-      count++;
+const results = []
+  for(let char of paragraph){
+    if(char === '.'){
+      results.push(char + '!')
       }
+      return char+=
     }
-    return paragraph
   }
 
- 
+ const cubeAll = function(arr){
+ const arrCubed = []
+    for(let num of arr){
+      arrCubed.push(num**3)
+    } 
+    return num+=
+}
 
 
 
