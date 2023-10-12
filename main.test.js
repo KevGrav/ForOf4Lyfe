@@ -10,16 +10,38 @@ const addAll = function (numbers){
 }
 
 
-const countSpace = function (str){
-  let sum = (str.length - str.trim().length);
-  return sum;
+const countSpaces = function(str){
+let count = 0
+for(let i in str){
+  if(str[i] === ' '){
+      count++
+    }
+  }
+  return count
 }
 
+const countTrues = function(bool){
+let count = 0
+for(let i in bool){
+  if(bool[i] === true){
+    count++
+  }
+}
+  return count
+}
 
+const makeFriendly = function(paragraph){
+  let count = 0
+  for(let i in paragraph){
+    if(paragraph[i] === '.'){
+      paragraph.splice(i, 1, '!');    
+      count++;
+      }
+    }
+    return paragraph
+  }
 
-
-
-
+ 
 
 
 
