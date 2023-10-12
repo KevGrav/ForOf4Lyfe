@@ -34,20 +34,26 @@ const makeFriendly = function(paragraph){
 const results = []
   for(let char of paragraph){
     if(char === '.'){
-      results.push(char + '!')
+      results += '!';
+      } else {
+        results += char;
       }
-      return char+=
     }
+    return results
   }
 
  const cubeAll = function(arr){
  const arrCubed = []
     for(let num of arr){
-      arrCubed.push(num**3)
+      arrCubed += (num**3)
     } 
-    return num+=
+  return arrCubed    
 }
 
+const addNoises = function(arr1){
+
+  
+}
 
 
 
