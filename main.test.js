@@ -30,32 +30,70 @@ for(let i of bool){
   return count
 }
 
-const makeFriendly = function(paragraph){
-const results = []
-  for(let char of paragraph){
+const makeFriendly = function(para){
+let results = '';
+  for(let char of para){
     if(char === '.'){
       results += '!';
       } else {
-        results += char;
+      results += char;
       }
     }
-    return results
+    return results;
   }
 
  const cubeAll = function(arr){
  const arrCubed = []
     for(let num of arr){
-      arrCubed += (num**3)
+      let newNum = num**3
+      arrCubed.push(newNum)
     } 
   return arrCubed    
 }
 
-const addNoises = function(arr1){
 
 
+// const addNoises =  function(arr){
+//   const newArray = []
+//   for(const name of arr){
+//     if(name === 'Fido' || name === 'Rolph' || name === 'Maisie'){
+//       newArray.push(name + ' says "Woof!"')
+//     } else if (name === 'Garfield' || name === 'Heathcliff'){
+//       newArray.push(name + ' says "Meow!"')
+//     } else if(name === 'Barnie' || name === 'Sharp Tooth'){
+//       newArray.push(name + ' says "ROWR."')
+//     } 
+//     return newArray 
+//   }
+// }
+
+const addNoises = function(arr){ 
+  const dogs = [ 'Fido', 'Rolph', 'Maisie', ]; 
+  const cats = [ 'Garfield', 'Heathcliff', ] 
+  const dinos = [ 'Barnie', 'Sharp Tooth', ] 
+  const newArray = [] 
+    for(const name of arr){ 
+      if(dogs.includes(name)){
+        newArray.push(name + ' says "Woof!"') 
+      }else if(cats.includes(name)){ newArray.push(name + ' says "Meow!"') 
+      }else if(dinos.includes(name)){ newArray.push(name + ' says "ROWR."') 
+    } 
+  } return newArray
 }
+ 
+const womenOnly =  function(arr){
+  const newArray = [];
+    for(const name of arr){
+      if(name.substr(-1) === 'F'){ 
+         newArray.push(name);
+        }
+      }
+    return newArray
+  }
 
-
+const integersOnly = function(arr){
+  
+}
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
