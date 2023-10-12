@@ -92,8 +92,14 @@ const womenOnly =  function(arr){
   }
 
 const integersOnly = function(arr){
-  
-}
+const newArray = [];
+  for(const num of arr){
+    if(Number.isInteger(num)){
+      newArray.push(num);
+    }
+  }
+  return newArray;
+  }
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
